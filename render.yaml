@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: notes-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node src/app.js
+    rootDir: proyecto-notas/app
+    envVars:
+      - key: DB_HOST
+        scope: run
+      - key: DB_PORT
+        value: "5432"
+      - key: DB_USER
+        value: notesuser
+      - key: DB_PASSWORD
+        scope: run
+      - key: DB_NAME
+        value: notesdb
+      - key: PORT
+        value: "3000"
+
+databases:
+  - name: notes-db
+    plan: free
+    region: ohio
+    databaseName: notesdb
+    user: notesuser
