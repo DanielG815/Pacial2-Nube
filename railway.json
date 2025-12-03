@@ -6,6 +6,6 @@
     "startCommand": "node src/app.js",
     "numReplicas": 1,
     "restartPolicyType": "on_failure",
-    "restartPolicyMaxRetries": 0
+    "restartPolicyMaxRetries": 3
   }
 }
